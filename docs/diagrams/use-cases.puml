@@ -1,0 +1,33 @@
+@startuml
+
+left to right direction
+skinparam actorStyle awesome
+
+actor Customer as c
+actor Driver as d
+
+package "Customer Actions" {
+    usecase "Register Customer" as uc_registerCustomer
+    usecase "Update Customer" as uc_updateCustomer
+    
+}
+
+package "Vehicle Actions" {
+    usecase "Book" as uc_book
+    usecase "Unbook" as uc_unbook
+    usecase "Create" as uc_createVehicle
+    usecase "Update" as uc_updateVehicle
+    usecase "Check Availability" as uc_vehicleAvailability
+}
+
+c --> uc_registerCustomer
+c --> uc_updateCustomer
+c --> uc_book
+c --> uc_unbook
+c --> uc_vehicleAvailability
+
+d --> uc_createVehicle
+d --> uc_updateVehicle
+
+
+@enduml

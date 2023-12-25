@@ -6,28 +6,30 @@ skinparam actorStyle awesome
 actor Customer as c
 actor Driver as d
 
-package "Customer Actions" {
+package "User Actions" {
     usecase "Register Customer" as uc_registerCustomer
     usecase "Update Customer" as uc_updateCustomer
-    
+    usecase "Register Driver" as uc_registerDriver
+    usecase "Update Driver" as uc_updateDriver
 }
 
-package "Vehicle Actions" {
+package "Booking Actions" {
     usecase "Book" as uc_book
     usecase "Unbook" as uc_unbook
-    usecase "Create" as uc_createVehicle
-    usecase "Update" as uc_updateVehicle
-    usecase "Check Availability" as uc_vehicleAvailability
+    usecase "Create Vehicle" as uc_createVehicle
+    usecase "Update Vehicle" as uc_updateVehicle
+    usecase "Check Vehicle Availability" as uc_vehicleAvailability
+    usecase "Accept Booking" as uc_bookAccept
+    usecase "Reject Booking" as uc_bookReject
 }
 
-c --> uc_registerCustomer
-c --> uc_updateCustomer
 c --> uc_book
 c --> uc_unbook
 c --> uc_vehicleAvailability
 
 d --> uc_createVehicle
 d --> uc_updateVehicle
-
+d --> uc_bookAccept
+d --> uc_bookReject
 
 @enduml

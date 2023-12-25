@@ -1,0 +1,140 @@
+@startuml
+
+participant User
+participant Controller
+participant Service
+database DB
+
+group #LightBlue "Register Driver"
+
+User -> Controller: asd
+rnote over User
+
+end note
+
+Controller -> Service
+rnote over Controller
+
+end note
+
+Service -> DB
+rnote over Service
+
+end note
+
+DB --> Service
+rnote over DB
+
+end note
+
+Service --> Controller
+rnote over Service
+
+end note
+
+Controller --> User
+rnote over Controller
+
+end note
+
+end
+
+group #Lavender "Register Customer"
+
+User -> Controller
+rnote over User
+
+end note
+
+Controller -> Service
+rnote over Controller
+
+end note
+
+Service -> DB
+rnote over Service
+
+end note
+
+DB --> Service
+rnote over DB
+
+end note
+
+Service --> Controller
+rnote over Service
+
+end note
+
+Controller --> User
+rnote over Controller
+
+end note
+end
+
+group #LightBlue "Update Driver"
+
+User -> Controller
+rnote over User
+
+end note
+
+Controller -> Service
+rnote over Controller
+
+end note
+
+Service -> DB
+rnote over Service
+
+end note
+
+DB --> Service
+rnote over DB
+
+end note
+
+Service --> Controller
+rnote over Service
+
+end note
+
+Controller --> User
+rnote over Controller
+
+end note
+end
+
+group #Lavender "Update Customer"
+
+User -> Controller
+rnote over User
+
+end note
+
+Controller -> Service
+rnote over Controller
+
+end note
+
+Service -> DB
+rnote over Service
+
+end note
+
+DB --> Service
+rnote over DB
+
+end note
+
+Service --> Controller
+rnote over Service
+
+end note
+
+Controller --> User
+rnote over Controller
+
+end note
+end
+@enduml

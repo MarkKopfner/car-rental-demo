@@ -5,7 +5,7 @@ participant Controller
 participant Service
 database DB
 
-group #LightBlue "Check Availability"
+group #LightBlue "Check Vehicle Availability"
 
 Customer -> Controller: asd
 rnote over Customer
@@ -37,8 +37,39 @@ rnote over Controller
 
 end note
 
-
 end
 
+group #Lavender "Book Vehicle"
+
+Customer -> Controller
+rnote over Customer
+
+end note
+
+Controller -> Service
+rnote over Controller
+
+end note
+
+Service -> DB
+rnote over Service
+
+end note
+
+DB --> Service
+rnote over DB
+
+end note
+
+Service --> Controller
+rnote over Service
+
+end note
+
+Controller --> Customer
+rnote over Controller
+
+end note
+end
 
 @enduml

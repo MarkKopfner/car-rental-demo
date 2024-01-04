@@ -3,23 +3,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.1</version>
+        <groupId>com.example</groupId>
+        <artifactId>car-rental-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>car-rental-demo-microservice-parent</artifactId>
+    <artifactId>car-rental-demo-microservices</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>car-rental-demo-microservice-parent</name>
-    <description>Car Rental Demo Microservice Parent</description>
-    <properties>
-        <java.version>17</java.version>
-    </properties>
+    <name>car-rental-demo-microservices</name>
+    <description>car-rental-demo-microservices</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>driver</module>
+        <module>customer</module>
+        <module>booking</module>
+        <module>vehicle</module>
+    </modules>
+
     <dependencies>
+
+        <!-- DDD Utils -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.example</groupId>
+            <artifactId>ddd-utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <!-- DATABASE -->
@@ -28,54 +36,7 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
-
-        <!-- LOMBOK -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <!-- TESTING -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-testcontainers</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.restdocs</groupId>
-            <artifactId>spring-restdocs-mockmvc</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- GRPC -->
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty</artifactId>
-            <version>1.16.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>1.16.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-stub</artifactId>
-            <version>1.16.1</version>
-        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

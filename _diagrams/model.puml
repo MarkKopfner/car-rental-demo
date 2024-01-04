@@ -1,0 +1,45 @@
+@startuml
+
+class "Booking (Aggregate Root)" as BOOKING {
+    **UUID** id
+    **Vehicle** vehicle
+    **Driver** driver
+    **Customer** customer
+    **LocalDateTime** bookingDate
+    **BigDecimal** price
+    **Double** distance
+}
+
+class "Vehicle (Aggregate Root)" as VEHICLE {
+    **UUID** id
+    **String** brand
+    **String** model
+    **Double** autonomy
+    **UUID** driver
+    **FuelType** fuelType
+    **Integer** seats
+}
+
+class "Driver (Aggregate Root)" as DRIVER {
+    **UUID** id
+    **String** name
+    **BigDecimal** balance
+    **Set<UUID>** vehicles
+}
+
+class "Customer (Aggregate Root)" as CUSTOMER {
+    **UUID** id
+    **String** name
+    **BigDecimal** balance
+}
+
+enum "FuelType" as FUEL_TYPE {
+    GAS, 1.7€
+    DIESEL, 1.5€
+    ELECTRIC, 0.7€
+    HYBRID, 1.2€
+    HYDROGEN, 0.2€
+}
+
+VEHICLE --> FUEL_TYPE
+@enduml

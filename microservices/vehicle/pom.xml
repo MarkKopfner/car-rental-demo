@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>car-rental-demo-microservices-driver</artifactId>
+    <artifactId>car-rental-demo-microservices-vehicle</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>car-rental-demo-microservices-driver</name>
-    <description>car-rental-demo-microservices-driver</description>
+    <name>car-rental-demo-microservices-vehicle</name>
+    <description>car-rental-demo-microservices-vehicle</description>
 
 </project>

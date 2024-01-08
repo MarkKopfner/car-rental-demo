@@ -15,25 +15,7 @@ export function loadingVisible(flag) {
 }
 
 export async function loginDriver() {
-    try {
-        const fetchPromise = await fetch("", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username: "test-username",
-                password: "test-password",
-            })
-        })
 
-        const response = await Promise.race([fetchPromise, timeoutPromise]);
-        handleResponseCode(response);
-    } catch (error) {
-        createAlert(error.message, "error");
-    } finally {
-        loadingVisible(false);
-    }
 }
 
 export async function loginCustomer() {
@@ -53,7 +35,7 @@ export async function loginCustomer() {
         const response = await Promise.race([fetchPromise, timeoutPromise]);
         handleResponseCode(response);
     } catch (error) {
-        createAlert(error.message, "error");
+        console.log(error.message);
     } finally {
         loadingVisible(false);
     }
@@ -65,35 +47,6 @@ export function registerDriver() {
 
 export function registerCustomer() {
 
-}
-
-export function createAlert(message, type) {
-    if (existingAlert != null) {
-        existingAlert.className = "alert " + type;
-        existingAlert.textContent = message;
-    } else {
-        const alert = document.createElement("div");
-        alert.id = "alert-div";
-        alert.className = "alert " + type;
-        alert.textContent = message;
-
-        const closeBtn = document.createElement("ion-icon");
-        closeBtn.setAttribute("name", "close-outline");
-        closeBtn.classList.add("closebtn");
-        closeBtn.addEventListener("click", () => {
-            clearAlerts();
-        });
-
-        alert.appendChild(closeBtn);
-        document.body.appendChild(alert);
-    }
-}
-
-export function clearAlerts() {
-    const alerts = document.querySelectorAll("#alert-div");
-    alerts.forEach((item) => {
-        document.body.removeChild(item);
-    });
 }
 
 function handleResponseCode(response) {

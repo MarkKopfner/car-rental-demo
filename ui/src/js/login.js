@@ -1,4 +1,4 @@
-import {loadingVisible, loginCustomer} from "./utils";
+import {loginCustomer, registerCustomer} from "./utils.js";
 
 const switchers = [...document.querySelectorAll('.switcher')]
 
@@ -10,10 +10,12 @@ switchers.forEach(item => {
 })
 
 document.getElementById("btn-login").addEventListener("click", () => {
+    console.log("TEST LOGIN")
     loginCustomer();
 })
 
 
 document.getElementById("btn-signup").addEventListener("click", () => {
-    loadingVisible(true)
+    console.log("TEST REGISTER")
+    registerCustomer();
 })

@@ -12,7 +12,8 @@ public class API {
     public static final String BASE = "/api/car-rental";
 
     /**
-     * REGISTRATION
+     * CUSTOMER
      */
-    public static final String REGISTER_CUSTOMER = "/v1.0/registration/customer";
+    public static final String REGISTER_CUSTOMER = "/v1.0/customer/register";
+    public static final String LOGIN_CUSTOMER = "/v1.0/customer/login";
 }
